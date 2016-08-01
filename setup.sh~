@@ -10,7 +10,6 @@ read virtualhost_dir
 cp src/script.php /opt
 cp src/domain.php $virtualhost_dir.$domain
 cp src/alexa /usr/local/bin/
-chmod +x /usr/local/bin/alexa
 
 sed -i -e 's/DOMAIN/' . $domain . '/g' /tmp/domain.php
 sed -i -e 's/DIR/' . $domain . '/g' /tmp/script.php
