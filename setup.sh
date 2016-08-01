@@ -9,6 +9,7 @@ read virtualhost_dir
 # Copy and install the script in the right place.
 cp src/script.php /opt
 cp src/domain.php $virtualhost_dir.$domain
+cp src/alexa /usr/local/bin/
 
 sed -i -e 's/DOMAIN/' . $domain . '/g' /tmp/domain.php
 sed -i -e 's/DIR/' . $domain . '/g' /tmp/script.php
