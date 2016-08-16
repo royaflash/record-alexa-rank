@@ -6,6 +6,10 @@ read domain
 echo "Type the virtualhost path you want to see records in it (eg. /var/www/alexa.example.com/), followed by [ENTER]:"
 read virtualhost_dir
 
+if (${virtualhost_dir: -1} != "/") then
+	$virtualhost_dir += "/"
+fi
+
 # Copy and install the script in the right place.
 cp src/script.php /opt
 cp src/domain.php $virtualhost_dir$domain.php
