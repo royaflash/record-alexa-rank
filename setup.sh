@@ -8,9 +8,7 @@ echo "Type the virtualhost path you want to see records in it (eg. /var/www/alex
 read virtualhost_dir
 
 # Add slash to end of path if not written
-if ({tail -c 1 $virtualhost_dir } != "/") then
-	$virtualhost_dir += "/"
-fi
+if [[ "$virtualhost_dir" == *\/ ]]; then echo "yes"; fi
 
 # Replace domain and dir in source code
 sed -i -- 's/DOMAIN/$domain/g' src/script.php
