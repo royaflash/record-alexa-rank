@@ -3,7 +3,7 @@
 function alexaParser($url) {
 
         $name = trim(preg_replace('/\.\w*/', '', $url));
-		$dir = 'DIR';
+		$dir = '/var/www/judge.sadrnezhaad.ir/';
         ob_start();
 
         // Alexa Parameters
