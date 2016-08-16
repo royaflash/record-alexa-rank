@@ -15,6 +15,7 @@ virtualhost_dir="$virtualhost_dir/" ; fi
 sed -i -- "s/DOMAIN/$domain/g" src/script.php
 sed -i -- "s/DOMAIN/$domain/g" src/domain.php
 sed -i -- "s#DIR#$virtualhost_dir#g" src/domain.php
+sed -i -- "s#DIR#$virtualhost_dir#g" src/script.php
 
 # Copy and install the script in the right place.
 cp src/script.php /opt/alexa-script.php
