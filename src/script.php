@@ -2,8 +2,7 @@
 
 function alexaParser($url) {
 
-        $name = trim(preg_replace('/\.\w*/', '', $url));
-		$dir = '/var/www/judge.sadrnezhaad.ir/';
+	$dir = 'DIR';
         ob_start();
 
         // Alexa Parameters
@@ -23,7 +22,7 @@ function alexaParser($url) {
         // Write HTML File
         $page = ob_get_contents();
         ob_end_clean();
-        $file = $dir . $name . ".log";
+        $file = $dir . $url . ".log";
         @chmod($file, 0755);
         $fw = fopen($file, "a");
         fputs($fw, $page, strlen($page));
@@ -32,7 +31,7 @@ function alexaParser($url) {
 }
 
 // call this method for each of your domains
-alexaParser("sadrnezhaad.ir");
+alexaParser("DOMAIN");
 
 die();
 ?>

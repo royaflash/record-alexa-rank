@@ -12,8 +12,8 @@
 </td>
 </tr>
 <?php
-$name = "$domain";
-$dir = '$virtualhost_dir';
+$name = "DOMAIN";
+$dir = 'DIR';
 $log = $dir . $name . ".log";
 $f = fopen($log, "r");
 echo fread($f,filesize($log)); 
