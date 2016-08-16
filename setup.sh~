@@ -8,7 +8,8 @@ echo "Type the virtualhost path you want to see records in it (eg. /var/www/alex
 read virtualhost_dir
 
 # Add slash to end of path if not written
-if (${virtualhost_dir: -1} != "/") then
+$virtualhost_dir = {tail -c 1 $virtualhost_dir }
+if ($virtualhost_dir != "/") then
 	$virtualhost_dir += "/"
 fi
 
@@ -18,7 +19,7 @@ sed -i -- 's/DOMAIN/$domain/g' src/domain.php
 sed -i -- 's/DIR/$virtualhost_dir/g' src/domain.php
 
 # Copy and install the script in the right place.
-cp src/script.php /opt
+cp src/script.php /opt/alexa-script.php
 cp src/domain.php $virtualhost_dir$domain.php
 cp src/alexa /usr/local/bin/
 chmod +x /usr/local/bin/alexa

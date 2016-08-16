@@ -32,7 +32,7 @@ function alexaParser($url) {
 }
 
 // call this method for each of your domains
-alexaParser("DOMAIN");
+alexaParser("$domain");
 
 die();
 ?>

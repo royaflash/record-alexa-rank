@@ -8,7 +8,7 @@ echo "Type the virtualhost path you want to see records in it (eg. /var/www/alex
 read virtualhost_dir
 
 # Add slash to end of path if not written
-if (${virtualhost_dir: -1} != "/") then
+if ({tail -c 1 $virtualhost_dir } != "/") then
 	$virtualhost_dir += "/"
 fi
 
