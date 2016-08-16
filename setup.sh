@@ -8,7 +8,7 @@ read virtualhost_dir
 
 # Copy and install the script in the right place.
 cp src/script.php /opt
-cp src/domain.php $virtualhost_dir.$domain
+cp src/domain.php $virtualhost_dir$domain.php
 cp src/alexa /usr/local/bin/
 chmod +x /usr/local/bin/alexa
 
