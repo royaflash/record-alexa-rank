@@ -1,1 +1,2 @@
+#!/bin/bash
 php5 /opt/alexa-script.php
